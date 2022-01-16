@@ -118,12 +118,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -152,6 +152,127 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/01/16/2020-01-16%E5%88%9D%E8%AF%86HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wei">
+      <meta itemprop="description" content="少女学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="a simple blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/16/2020-01-16%E5%88%9D%E8%AF%86HTML/" class="post-title-link" itemprop="url">HTML</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-01-16 14:21:06 / Modified: 23:01:41" itemprop="dateCreated datePublished" datetime="2022-01-16T14:21:06+08:00">2022-01-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="初识HTML"><a href="#初识HTML" class="headerlink" title="初识HTML"></a>初识HTML</h1><p>这一篇是好久之前的笔记啦，当时看的是<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11t411K74Q?p=4">动力结点杜聚宾老师的课</a>，重新回顾一下发到博客上来。</p>
+<p>在学习HTML之前，先了解一下两种系统架构：</p>
+<h3 id="系统结构：B-S架构和C-S架构"><a href="#系统结构：B-S架构和C-S架构" class="headerlink" title="系统结构：B/S架构和C/S架构"></a>系统结构：B/S架构和C/S架构</h3><h4 id="B-S架构："><a href="#B-S架构：" class="headerlink" title="B/S架构："></a>B/S架构：</h4><p><strong>==Browser / Server （浏览器/服务器的交互形式）==<strong>用户通过</strong>浏览器</strong>来访问。</p>
+<p>Browser支持哪些语言：<code>HTML</code> <code>CSS</code> <code>JavaScript</code></p>
+<p>Server即服务器端的语言很多：<code>C</code> <code>C++</code> <code>Java</code> <code>python</code>…..</p>
+<h5 id="B-S架构的系统有什么优点和缺点？"><a href="#B-S架构的系统有什么优点和缺点？" class="headerlink" title="B/S架构的系统有什么优点和缺点？"></a>B/S架构的系统有什么优点和缺点？</h5><ul>
+<li>优点：==升级方便，只升级服务器端代码即可，维护成本低。==</li>
+<li>缺点：==速度慢、体验不好、界面不炫酷。==</li>
+</ul>
+<blockquote>
+<p>企业内部的解决方案都是采用B/S架构的系统，因为企业内部办公需要的一些系统不需要炫酷，不需要特别好的用户体验，只要能做数据的增删改查即可。并且企业内部更注重维护的成本。</p>
+</blockquote>
+<h5 id="B-S架构的系统有哪些代表？"><a href="#B-S架构的系统有哪些代表？" class="headerlink" title="B/S架构的系统有哪些代表？"></a>B/S架构的系统有哪些代表？</h5><p>京东、百度、Google….</p>
+<h4 id="C-S架构"><a href="#C-S架构" class="headerlink" title="C/S架构"></a>C/S架构</h4><p>Client / Server   （客户端/服务器端的交互形式）用户通过<strong>客户端</strong>来访问。</p>
+<h5 id="C-S架构的系统有什么优点和缺点？"><a href="#C-S架构的系统有什么优点和缺点？" class="headerlink" title="C/S架构的系统有什么优点和缺点？"></a>C/S架构的系统有什么优点和缺点？</h5><ul>
+<li>缺点：==升级麻烦，维护成本较高。==</li>
+<li>优点：==速度快，体验好，界面炫酷。==（娱乐型的系统多数是C/S架构的）</li>
+</ul>
+<h5 id="常见的C-S架构的系统："><a href="#常见的C-S架构的系统：" class="headerlink" title="常见的C/S架构的系统："></a>常见的C/S架构的系统：</h5><p>QQ、微信、网易云….</p>
+<p>想起来我在<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ux411G7Bs">数据库课程</a>上老师也讲过C/S架构和B/S架构，这是我当时记下的：</p>
+<p>HTML就是在B/S架构中的Browser端发挥作用的。</p>
+<h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><p>html：hyper text markup language，超文本标记语言</p>
+<blockquote>
+<p>==超文本？==</p>
+<p>​            超级文本，例如流媒体，声音，视频，图片等。</p>
+<p>==标记语言？==</p>
+<p>​            这种语言是由<font color="#FF000">大量的标签</font>组成。</p>
+<p>tip：任何一个标签都有<strong>开始标签</strong>和<strong>结束标签</strong>，例如：</p>
+<p><code>&lt;标签&gt; </code> ：开始标签</p>
+<p><code>&lt;/标签&gt;</code> ：结束标签【括号内起始位置增加一个反斜杠】</p>
+</blockquote>
+<h3 id="HTML是不是编程语言？"><a href="#HTML是不是编程语言？" class="headerlink" title="HTML是不是编程语言？"></a>HTML是不是编程语言？</h3><p>html严格意义上来只能说是一种规范，一种浏览器上的规范，标签语言，不能称为编程语言，因为html中没有变量、数据类型、控制语句if、for，这些都没有的。</p>
+<blockquote>
+<p>tip : HTML是标签语言，CSS是样式语言，都不是编程语言。只有JavaScript是编程语言。</p>
+</blockquote>
+<h3 id="HTML运行在哪？"><a href="#HTML运行在哪？" class="headerlink" title="HTML运行在哪？"></a>HTML运行在哪？</h3><p>运行在<strong>浏览器</strong>上，直接使用浏览器打开HTML文件就能运行。</p>
+<h3 id="用什么开发？"><a href="#用什么开发？" class="headerlink" title="用什么开发？"></a>用什么开发？</h3><p>HTML开发的时候使用普通的文本编辑器就行，创建的文件扩展名是.html或者.htm</p>
+<p>HTML也有专业的开发工具，例如：DreamWeaver、HBuilder…..</p>
+<h3 id="HTML基本网页结构"><a href="#HTML基本网页结构" class="headerlink" title="HTML基本网页结构"></a>HTML基本网页结构</h3><p>文件格式：<code>xxx.html</code>（推荐）<code>xxx.htm</code></p>
+<h5 id="HTML的基本组成？"><a href="#HTML的基本组成？" class="headerlink" title="HTML的基本组成？"></a>HTML的基本组成？</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>一定有head和body两部分组成</p>
+<p>!doctype声明：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注释代码--&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--声明式：不能显示（head中只有title里的内容可以在网页标题中显示）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--设置网页编码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span>SEO </span><br><span class="line">    	<span class="comment">&lt;!--关键词：是否能被搜索引擎搜到--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;学习html&quot;</span>/&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--描述：当搜到网页时，展示的简介内容--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;学习html非常好&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>my first html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--能够显示的--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    my context</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>html不区分大小写，容错性很强</strong></p>
+<h3 id="HTML是谁制定的？"><a href="#HTML是谁制定的？" class="headerlink" title="HTML是谁制定的？"></a>HTML是谁制定的？</h3><p><strong>W3C：世界万维网联盟（World Wide Web Consortium）</strong></p>
+<p>W3C制定了HTML的规范，每个浏览器生产厂家都会遵守规范。HTML程序员也会按照这个规范去写代码。</p>
+<p>W3C标准：</p>
+<ul>
+<li>具体的实现产品html css javascript</li>
+<li>html版本</li>
+<li>html和xhtml的区别</li>
+<li>html内容的语义化</li>
+</ul>
+<p>HTML规范目前最高的版本是：HTML5.0，简称H5.</p>
+<p>W3C制定了很多规范：HTML/XML/http协议/https协议……</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
