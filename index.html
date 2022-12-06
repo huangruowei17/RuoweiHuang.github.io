@@ -193,7 +193,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-12-06 01:13:06 / Modified: 01:15:31" itemprop="dateCreated datePublished" datetime="2022-12-06T01:13:06+08:00">2022-12-06</time>
+      <time title="Created: 2022-12-06 01:13:06 / Modified: 17:56:14" itemprop="dateCreated datePublished" datetime="2022-12-06T01:13:06+08:00">2022-12-06</time>
     </span>
 
   
@@ -206,7 +206,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>01点13分 买了域名wantobe.top，折腾阿里云服务器到现在，虽然是轻量应用型服务器，按理来说比较简单，但是资料太少，反而比较麻烦。出现好多问题，全靠自己摸索……</p>
+          <p>01点13分 买了域名<code>wantobe.top</code>，折腾阿里云服务器到现在，虽然是轻量应用型服务器，按理来说比较简单，但是资料太少，反而比较麻烦。出现好多问题，全靠自己摸索……</p>
+<p>11点41分 公网 ip，80端口也开了，也<code>ping</code> 得通，但是在浏览器上还是无法访问，显示服务器拒绝连接。😡</p>
+<p>知道为什么了，因为没有配置<code>Apache</code>，原来一直是只有<code>Ubuntu</code>一个操作系统😓。</p>
+<p>重置系统了，把镜像改为<code>WordPress</code>，底层自动配置好环境Alibaba Cloud Linux3，PHP8.1，MySQL5.7，Nginx1.22。</p>
+<p>成功了。</p>
+<p>又不行了……没备案，大陆买的服务器都要备案。</p>
+<blockquote>
+<p>按照国家相关规定，大陆地域的服务器要备案，域名要实名制。</p>
+<p>域名如果不是在国内商家注册的，就不用实名制了。</p>
+<p>服务器是在大陆以外地区的，就不用网站备案了。</p>
+<p>比如说你从国外域名商买了域名，又在阿里云买了美国服务器，这样就可以不用做网站备案了。</p>
+</blockquote>
+<p>15点46分 备案域名，这个教程很不错：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16K4y1N7G2/">【手把手教程】个人域名如何备案 阿里云ICP 网站备案</a>，不过域名实名认证后，需要等2-3天才能备案，网址放<a target="_blank" rel="noopener" href="https://beian.aliyun.com/pcContainer/formpage?page=selfBa&pageAction=init">这里</a>，那就过两天再来吧。先用ip地址玩一玩wordpress。</p>
+<p>（吐槽：这样建站好麻烦，域名实名+备案需要等好长时间）</p>
+<p>17点55分 晚上打算复习一下SQL语法。</p>
 
       
     </div>
