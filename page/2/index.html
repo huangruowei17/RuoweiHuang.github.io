@@ -58,6 +58,9 @@
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -79,6 +82,12 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
 
 
 
@@ -734,7 +743,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h1><p>今天再用hexo推送一篇博客的时候一直不成功，并且出现这个报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">err: YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line x, column X</span><br></pre></td></tr></table></figure>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">err: YAMLException: can not read a <span class="keyword">block</span> mapping <span class="built_in">entry</span>; a multiline key may not be an <span class="keyword">implicit</span> key at line x, column X</span><br></pre></td></tr></table></figure>
 
 <p>发现问题：刚刚写的的markdown文件头部的tags: 后面忘了加空格。</p>
 <h1 id="关于YML语言"><a href="#关于YML语言" class="headerlink" title="关于YML语言"></a>关于YML语言</h1><p>以前在项目里也有写过yml文件，但是现在只记得yml语言常常用来写配置文件，语法非常规整。然而好长时间没接触，现在已经完全没有什么印象了/(ㄒoㄒ)/~~，导致这个报错都看得一头雾水。所以写篇博客，以作警示：<strong>学习如逆水行舟，不进则退。以及，学过的东西，要多复习总结！</strong></p>
@@ -940,7 +949,7 @@
 <p>打算在这一篇写一些基本用法，其实基本上都可以在官方文档找到。在这里写下只是为了记录一下不断摸索的过程，其中参考了很多其他优秀的博客。</p>
 <p>少女摸索中……会不断更新。</p>
 <h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><h2 id="增加categories分类"><a href="#增加categories分类" class="headerlink" title="增加categories分类"></a>增加categories分类</h2><p><code>hexo n &quot;title&quot;</code> 新建的默认的页面抬头是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">tags: </span><br></pre></td></tr></table></figure>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title:</span><br><span class="line">date:</span><br><span class="line"><span class="keyword">tags:</span> </span><br></pre></td></tr></table></figure>
 
 <p>可以编辑标题、日期、标签和内容，但是没有分类的选项。可以打开<code>scaffolds/post.md</code>文件，在<code>tages:</code>上面加入<code>categories:</code>。</p>
 <p>保存后，重新执行<code>hexo n &quot;title&quot;</code>命令，会发现新建的页面里有<code>categories:</code>项了。</p>
@@ -955,12 +964,12 @@
 </blockquote>
 <p>如果我们想要把路径名和分类名分别设置，需要怎么办呢？</p>
 <p>打开根目录下的配置文件<code>_config.yml</code>，找到如下位置做更改：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">	编程: programming</span><br><span class="line">	生活: life</span><br><span class="line">	其他: other</span><br><span class="line">tag_map:</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Category &amp; Tag</span></span><br><span class="line"><span class="symbol">default_category:</span> uncategorized</span><br><span class="line"><span class="symbol">category_map:</span></span><br><span class="line">	编程: programming</span><br><span class="line">	生活: life</span><br><span class="line">	其他: other</span><br><span class="line"><span class="symbol">tag_map:</span></span><br></pre></td></tr></table></figure>
 
 <p>在这里<code>category_map:</code>是设置分类的地方，每行一个分类，冒号前面是分类名称，后面是访问路径。</p>
 <p>可以提前在这里设置好一些分类，当编辑的文章填写了对应的分类名时，就会自动的按照对应的路径来访问。</p>
 <h2 id="给文章加标签"><a href="#给文章加标签" class="headerlink" title="给文章加标签"></a>给文章加标签</h2><p>在编辑文章的时候，<code>tags:</code>后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tages: [标签1,标签2,...标签n]</span><br><span class="line"></span><br><span class="line"> tages: </span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br><span class="line">...</span><br><span class="line">- 标签n</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tages: [标签1,标签2,...标签n]</span><br><span class="line"></span><br><span class="line"><span class="code"> tages: </span></span><br><span class="line"><span class="bullet">- </span>标签1</span><br><span class="line"><span class="bullet">- </span>标签2</span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span><span class="bullet">- </span>标签n</span><br></pre></td></tr></table></figure>
 
 <h2 id="文章保存为草稿"><a href="#文章保存为草稿" class="headerlink" title="文章保存为草稿"></a>文章保存为草稿</h2><p><a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/hexo-draft/">来自于这里</a></p>
 <p>作者是：novnan</p>
@@ -972,19 +981,19 @@
 <ol start="2">
 <li>建立文章草稿</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> draft &lt;<span class="built_in">title</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p>Hexo 另外提供 <code>draft</code> 机制，它的原理是新文章将建立在 <code>source/_drafts</code> 目录下，因此 <code>hexo generate</code> 并不会将其编译到 <code>public</code> 目录下，所以 <code>hexo deploy</code> 也不会将其部署到 GitHub。</p>
 <ol start="3">
 <li>本机预览草稿</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo S <span class="comment">--draft</span></span><br></pre></td></tr></table></figure>
 
 <p>虽然 <code>hexo generate</code> 不会编译 <code>source/_drafts</code> 目录下的文章，但 Hexo 的 <code>Hexo server</code> 另外提供 <code>--draft</code> 参数，这让我们只要搭配 <code>hexo-browsersync</code> plugins，就可以达到一边编辑 <code>markdown</code> 文章，一边使用浏览器预览的目的。</p>
 <ol start="4">
 <li>将草稿发布为正式文章</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo P <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
 <p>之后的 <code>hexo generate</code> 与 <code>hexo deploy</code> 的用法就完全一样了。</p>
@@ -996,7 +1005,7 @@
 <li>安装插件</li>
 </ol>
 <p>cd到你hexo根目录里用cmd执行以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-<span class="built_in">image</span> --<span class="built_in">save</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>打开hexo的配置文件_config.yml，找到 post_asset_folder，把这个选项从false改成true。这样新建文章时，会自动生成和文章名相同的文件夹，这个文件夹专门用于存放文章图片。</li>
