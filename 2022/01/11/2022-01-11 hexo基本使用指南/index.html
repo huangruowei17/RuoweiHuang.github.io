@@ -1,32 +1,367 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-sunflower.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32X32-sunflower.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16X16-sunflower.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ruo-wei.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="关于hexo，我曾在第一篇写过一些基本命令。 打算在这一篇写一些基本用法，其实基本上都可以在官方文档找到。在这里写下只是为了记录一下不断摸索的过程，其中参考了很多其他优秀的博客。 少女摸索中……会不断更新。 基础使用增加categories分类hexo n &quot;title&quot; 新建的默认的页面抬头是这样的： 123title:date:tags:   可以编辑标题、日期、标签和内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo基本使用指南">
+<meta property="og:url" content="https://ruo-wei.github.io/2022/01/11/2022-01-11%20hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Patchouli&#39;s Digital Library🌟">
+<meta property="og:description" content="关于hexo，我曾在第一篇写过一些基本命令。 打算在这一篇写一些基本用法，其实基本上都可以在官方文档找到。在这里写下只是为了记录一下不断摸索的过程，其中参考了很多其他优秀的博客。 少女摸索中……会不断更新。 基础使用增加categories分类hexo n &quot;title&quot; 新建的默认的页面抬头是这样的： 123title:date:tags:   可以编辑标题、日期、标签和内容">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-11T13:34:09.000Z">
+<meta property="article:modified_time" content="2022-11-20T12:19:23.376Z">
+<meta property="article:author" content="小垃圾也要加油">
+<meta property="article:tag" content="个人博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ruo-wei.github.io/2022/01/11/2022-01-11%20hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ruo-wei.github.io/2022/01/11/2022-01-11%20hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/","path":"2022/01/11/2022-01-11 hexo基本使用指南/","title":"hexo基本使用指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>hexo基本使用指南 | Patchouli's Digital Library🌟</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Patchouli's Digital Library🌟</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">天才并不比一个诚实的人有更多的光，但他有一个特殊的透镜，可以将光线聚焦至燃点————维特根斯坦</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+  <aside class="sidebar">
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0categories%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">增加categories分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AECategories"><span class="nav-number">1.2.</span> <span class="nav-text">设置Categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E6%96%87%E7%AB%A0%E5%8A%A0%E6%A0%87%E7%AD%BE"><span class="nav-number">1.3.</span> <span class="nav-text">给文章加标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E4%BF%9D%E5%AD%98%E4%B8%BA%E8%8D%89%E7%A8%BF"><span class="nav-number">1.4.</span> <span class="nav-text">文章保存为草稿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">1.5.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87"><span class="nav-number">1.6.</span> <span class="nav-text">更换Hexo博客网页图标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E4%B8%80%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">深入一点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E6%96%87%E4%BB%B6%E6%A1%86%E6%9E%B6"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo文件框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">Hexo原理</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小垃圾也要加油"
+      src="/images/avatar1.jpg">
+  <p class="site-author-name" itemprop="name">小垃圾也要加油</p>
+  <div class="site-description" itemprop="description">学习中……</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/01/11/2022-01-11%20hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo基本使用指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-11 21:34:09" itemprop="dateCreated datePublished" datetime="2022-01-11T21:34:09+08:00">2022-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-11-20 20:19:23" itemprop="dateModified" datetime="2022-11-20T20:19:23+08:00">2022-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>关于hexo，我曾在<a href="https://ruo-wei.github.io/2022/01/01/2020-01-01Hello/">第一篇</a>写过一些基本命令。</p>
+<p>打算在这一篇写一些基本用法，其实基本上都可以在官方文档找到。在这里写下只是为了记录一下不断摸索的过程，其中参考了很多其他优秀的博客。</p>
+<p>少女摸索中……会不断更新。</p>
+<h1 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h1><h2 id="增加categories分类"><a href="#增加categories分类" class="headerlink" title="增加categories分类"></a>增加categories分类</h2><p><code>hexo n &quot;title&quot;</code> 新建的默认的页面抬头是这样的：</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title:</span><br><span class="line">date:</span><br><span class="line"><span class="keyword">tags:</span> </span><br></pre></td></tr></table></figure>
+
+<p>可以编辑标题、日期、标签和内容，但是没有分类的选项。可以打开<code>scaffolds/post.md</code>文件，在<code>tages:</code>上面加入<code>categories:</code>。</p>
+<p>保存后，重新执行<code>hexo n &quot;title&quot;</code>命令，会发现新建的页面里有<code>categories:</code>项了。</p>
+<p><strong>scaffolds目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值。</strong></p>
+<h2 id="设置Categories"><a href="#设置Categories" class="headerlink" title="设置Categories"></a>设置Categories</h2><p>在我们编辑文章的时候，直接在<code>categories:</code>项填写属于哪个分类，但如果分类是中文的时候，路径也会包含中文。<br>比如分类我们设置的是：</p>
+<blockquote>
+<p>categories: 编程</p>
+</blockquote>
+<p>那在生成页面后，分类列表就会出现<code>编程</code>这个选项，他的访问路径是：</p>
+<blockquote>
+<p>*/categories/编程</p>
+</blockquote>
+<p>如果我们想要把路径名和分类名分别设置，需要怎么办呢？</p>
+<p>打开根目录下的配置文件<code>_config.yml</code>，找到如下位置做更改：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Category &amp; Tag</span></span><br><span class="line"><span class="symbol">default_category:</span> uncategorized</span><br><span class="line"><span class="symbol">category_map:</span></span><br><span class="line">	编程: programming</span><br><span class="line">	生活: life</span><br><span class="line">	其他: other</span><br><span class="line"><span class="symbol">tag_map:</span></span><br></pre></td></tr></table></figure>
+
+<p>在这里<code>category_map:</code>是设置分类的地方，每行一个分类，冒号前面是分类名称，后面是访问路径。</p>
+<p>可以提前在这里设置好一些分类，当编辑的文章填写了对应的分类名时，就会自动的按照对应的路径来访问。</p>
+<h2 id="给文章加标签"><a href="#给文章加标签" class="headerlink" title="给文章加标签"></a>给文章加标签</h2><p>在编辑文章的时候，<code>tags:</code>后面是设置标签的地方，如果有多个标签的话，可以用下面两种办法来设置：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tages: [标签1,标签2,...标签n]</span><br><span class="line"></span><br><span class="line"><span class="code"> tages: </span></span><br><span class="line"><span class="bullet">- </span>标签1</span><br><span class="line"><span class="bullet">- </span>标签2</span><br><span class="line"><span class="bullet">...</span></span><br><span class="line"><span class="bullet"></span><span class="bullet">- </span>标签n</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章保存为草稿"><a href="#文章保存为草稿" class="headerlink" title="文章保存为草稿"></a>文章保存为草稿</h2><p><a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/hexo-draft/">来自于这里</a></p>
+<p>作者是：novnan</p>
+<ol>
+<li>传统建立文章方式</li>
+</ol>
+<p>一般我们都会使用 <code>hexo new &lt;title&gt;</code> 来建立文章，这种建立方法会将新文章建立在 <code>source/_posts</code> 目录下。当使用 <code>hexo generate</code> 编译 markdown 文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后 <code>hexo deploy</code> 将会把 <code>public</code> 目录下所有文章部署到 GitHub，这是我们熟悉的 Hexo 流程。</p>
+<p>这种建立文章方式的缺点是：若我们同时编辑多篇文章，只要其中一篇文章尚未编辑完成，也会随着 <code>hexo deploy</code> 一起部署到 GitHub，也就是 GitHub 可能会看到我们尚未完成的文章。</p>
+<ol start="2">
+<li>建立文章草稿</li>
+</ol>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> draft &lt;<span class="built_in">title</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Hexo 另外提供 <code>draft</code> 机制，它的原理是新文章将建立在 <code>source/_drafts</code> 目录下，因此 <code>hexo generate</code> 并不会将其编译到 <code>public</code> 目录下，所以 <code>hexo deploy</code> 也不会将其部署到 GitHub。</p>
+<ol start="3">
+<li>本机预览草稿</li>
+</ol>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo S <span class="comment">--draft</span></span><br></pre></td></tr></table></figure>
+
+<p>虽然 <code>hexo generate</code> 不会编译 <code>source/_drafts</code> 目录下的文章，但 Hexo 的 <code>Hexo server</code> 另外提供 <code>--draft</code> 参数，这让我们只要搭配 <code>hexo-browsersync</code> plugins，就可以达到一边编辑 <code>markdown</code> 文章，一边使用浏览器预览的目的。</p>
+<ol start="4">
+<li>将草稿发布为正式文章</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo P <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
+<p>之后的 <code>hexo generate</code> 与 <code>hexo deploy</code> 的用法就完全一样了。</p>
+<ol start="5">
+<li>将文章转为草稿</li>
+</ol>
+<p>若日后想将正式文章转为为草稿，只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可。</p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><ol>
+<li>安装插件</li>
+</ol>
+<p>cd到你hexo根目录里用cmd执行以下代码</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-<span class="built_in">image</span> --<span class="built_in">save</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>打开hexo的配置文件_config.yml，找到 post_asset_folder，把这个选项从false改成true。这样新建文章时，会自动生成和文章名相同的文件夹，这个文件夹专门用于存放文章图片。</li>
+</ol>
+<h2 id="更换Hexo博客网页图标"><a href="#更换Hexo博客网页图标" class="headerlink" title="更换Hexo博客网页图标"></a>更换Hexo博客网页图标</h2><p><a target="_blank" rel="noopener" href="https://wangxiaoyu-go.github.io/2018/11/18/change-theme-favicon/">看这里</a></p>
+<h1 id="深入一点"><a href="#深入一点" class="headerlink" title="深入一点"></a>深入一点</h1><h2 id="Hexo文件框架"><a href="#Hexo文件框架" class="headerlink" title="Hexo文件框架"></a>Hexo文件框架</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── node_modules：<span class="comment">#依赖包-安装插件及所需nodejs模块。</span></span><br><span class="line">├── public  <span class="comment">#最终网页信息。即存放被解析markdown、html文件。</span></span><br><span class="line">├── scaffolds <span class="comment">#模板文件夹。即当您新建文章时，根据scaffold生成文件。</span></span><br><span class="line">├── <span class="built_in">source</span>  <span class="comment">#资源文件夹。即存放用户资源。</span></span><br><span class="line">|   └── _posts <span class="comment">#博客文章目录。</span></span><br><span class="line">└── themes <span class="comment">#存放主题。Hexo根据主题生成静态页面。</span></span><br><span class="line">├── _config.yml   <span class="comment">#网站的配置信息。标题、网站名称等。</span></span><br><span class="line">├── db.json：<span class="comment">#source解析所得到的缓存文件。</span></span><br><span class="line">├── package.json  <span class="comment"># 应用程序信息。即配置Hexo运行需要js包。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo原理"><a href="#Hexo原理" class="headerlink" title="Hexo原理"></a>Hexo原理</h2><p>Hexo是一个模板渲染引擎，可以将本地写好的markdown文本渲染为HTML、CSS等前端模板样式，然后推送到GitHub Pages，就可以访问了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/11/2022-01-06%20minimalist%20mindset/" rel="prev" title="minimalism mindset">
+                  <i class="fa fa-chevron-left"></i> minimalism mindset
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/16/2022-01-16%20%E5%88%9D%E8%AF%86HTML/" rel="next" title="HTML">
+                  HTML <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小垃圾也要加油</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

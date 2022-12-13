@@ -1,7 +1,911 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-sunflower.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32X32-sunflower.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16X16-sunflower.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ruo-wei.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="学习中……">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Patchouli&#39;s Digital Library🌟">
+<meta property="og:url" content="https://ruo-wei.github.io/index.html">
+<meta property="og:site_name" content="Patchouli&#39;s Digital Library🌟">
+<meta property="og:description" content="学习中……">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="小垃圾也要加油">
+<meta property="article:tag" content="个人博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ruo-wei.github.io/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Patchouli's Digital Library🌟</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Patchouli's Digital Library🌟</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">天才并不比一个诚实的人有更多的光，但他有一个特殊的透镜，可以将光线聚焦至燃点————维特根斯坦</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小垃圾也要加油"
+      src="/images/avatar1.jpg">
+  <p class="site-author-name" itemprop="name">小垃圾也要加油</p>
+  <div class="site-description" itemprop="description">学习中……</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/12/06/2022%E5%B9%B412%E6%9C%886%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/12/06/2022%E5%B9%B412%E6%9C%886%E6%97%A5/" class="post-title-link" itemprop="url">2022年12月6日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-12-06 01:13:06 / Modified: 17:56:14" itemprop="dateCreated datePublished" datetime="2022-12-06T01:13:06+08:00">2022-12-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>01点13分 买了域名<code>wantobe.top</code>，折腾阿里云服务器到现在，虽然是轻量应用型服务器，按理来说比较简单，但是资料太少，反而比较麻烦。出现好多问题，全靠自己摸索……</p>
+<p>11点41分 公网 ip，80端口也开了，也<code>ping</code> 得通，但是在浏览器上还是无法访问，显示服务器拒绝连接。😡</p>
+<p>知道为什么了，因为没有配置<code>Apache</code>，原来一直是只有<code>Ubuntu</code>一个操作系统😓。</p>
+<p>重置系统了，把镜像改为<code>WordPress</code>，底层自动配置好环境Alibaba Cloud Linux3，PHP8.1，MySQL5.7，Nginx1.22。</p>
+<p>成功了。</p>
+<p>又不行了……没备案，大陆买的服务器都要备案。</p>
+<blockquote>
+<p>按照国家相关规定，大陆地域的服务器要备案，域名要实名制。</p>
+<p>域名如果不是在国内商家注册的，就不用实名制了。</p>
+<p>服务器是在大陆以外地区的，就不用网站备案了。</p>
+<p>比如说你从国外域名商买了域名，又在阿里云买了美国服务器，这样就可以不用做网站备案了。</p>
+</blockquote>
+<p>15点46分 备案域名，这个教程很不错：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16K4y1N7G2/">【手把手教程】个人域名如何备案 阿里云ICP 网站备案</a>，不过域名实名认证后，需要等2-3天才能备案，网址放<a target="_blank" rel="noopener" href="https://beian.aliyun.com/pcContainer/formpage?page=selfBa&pageAction=init">这里</a>，那就过两天再来吧。先用ip地址玩一玩wordpress。</p>
+<p>（吐槽：这样建站好麻烦，域名实名+备案需要等好长时间）</p>
+<p>17点55分 晚上打算复习一下SQL语法。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/12/01/2022%E5%B9%B412%E6%9C%881%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/12/01/2022%E5%B9%B412%E6%9C%881%E6%97%A5/" class="post-title-link" itemprop="url">2022年12月1日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-12-01 20:35:49 / Modified: 20:54:13" itemprop="dateCreated datePublished" datetime="2022-12-01T20:35:49+08:00">2022-12-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>中午抓紧时间看了一些CJSON的讲解，感觉这个项目还是得深挖一下。😣</p>
+<p>发现相比技术面，HR面更麻烦，今天HR面得一塌糊涂，应该准备一下常见HR面问题的话术。</p>
+<p>得到了一个嵌入式岗位的面试机会，冲冲冲！</p>
+<p>晚上看了一点蒋炎岩的操作系统，老师很年轻但是很牛（是卷王），讲得特别好！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/30/2022%E5%B9%B411%E6%9C%8830%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/30/2022%E5%B9%B411%E6%9C%8830%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月30日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-30 19:21:43 / Modified: 19:35:54" itemprop="dateCreated datePublished" datetime="2022-11-30T19:21:43+08:00">2022-11-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上午做了一套C的面试题，觉得C还是有些掌握的不好，尤其是项目，还是得打磨一下。</p>
+<p><strong>嵌入式还是得学，现在看岗位10个有7个都是嵌入式。</strong></p>
+<p>中午学了一点K大幼幼班，开心😊，然后自己上手就被难倒了＞︿＜，感觉一幅简单的画都要细细画几个小时。</p>
+<p>感觉冬天到了，今天下雪大降温，最近都见不到太阳了，心情不太好。想去找深广的工作，我看了一下，深圳现在的天气还是17℃，想去没有冬天的地方，最好还靠海（内陆人对海的向往），深圳完美符合，广州好吃的特别多，也很向往。</p>
+<p>努力把吃完饭后的娱乐改为学习Python。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/29/2022%E5%B9%B411%E6%9C%8829%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/29/2022%E5%B9%B411%E6%9C%8829%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月29日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-29 21:04:36 / Modified: 22:35:21" itemprop="dateCreated datePublished" datetime="2022-11-29T21:04:36+08:00">2022-11-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>21点05分 </p>
+<p>刷Leetcode每日一题：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-changes-to-make-alternating-binary-string/">1758. 生成交替二进制字符串的最少操作数</a>，学到一个易错点：数字强制转换为字符，并不是直接转换为对应的数字字符，而是转换为ASCII码值相等的字符。</p>
+<p>（Leetcode还是得每天都刷，一个月不刷手就生了）</p>
+<p>22点34分</p>
+<p>看韩立刚老师的计网，他是我看过把计网讲的最清楚的。他的PPT似乎是有参考国外的，看来也是吸收了国外的讲法。</p>
+<p>打算把TCP这部分学完整理出一篇笔记发出来。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/27/2022%E5%B9%B411%E6%9C%8827%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/27/2022%E5%B9%B411%E6%9C%8827%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月27日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-27 12:18:44 / Modified: 12:25:25" itemprop="dateCreated datePublished" datetime="2022-11-27T12:18:44+08:00">2022-11-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上午昨晚了中国铁塔的笔试题，考察的全是Java Web开发的知识，有很多框架的内容我都不会（鉴定为寄），看了一点点K大的抓型课（K大好厉害）。</p>
+<p>下午看面经，计网还是有待加强，想个课系统的学一下。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/26/2022%E5%B9%B411%E6%9C%8826%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/26/2022%E5%B9%B411%E6%9C%8826%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月26日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-26 19:21:58 / Modified: 20:21:16" itemprop="dateCreated datePublished" datetime="2022-11-26T19:21:58+08:00">2022-11-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天白天一直在学习Shell，没什么进展，一个bug卡一天。</p>
+<p>晚上准备看看计网，然后用wireshark抓包看看。</p>
+<p>然后早点睡觉，明天得早起准备中国铁塔的笔试。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/25/2022%E5%B9%B411%E6%9C%8825%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/25/2022%E5%B9%B411%E6%9C%8825%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月25日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-25 16:58:02" itemprop="dateCreated datePublished" datetime="2022-11-25T16:58:02+08:00">2022-11-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-11-26 09:59:24" itemprop="dateModified" datetime="2022-11-26T09:59:24+08:00">2022-11-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>好几天没打卡了，最近找工作有点忙，上午整理笔记总结面经，下午和晚上学linux，争取学完shell。</p>
+<p>（如果有时间看看wireshark抓包实战）</p>
+<p>没有学完，学了一半，发现在虚拟机里面写太蛋疼了，要不断地释放鼠标，配置了XShell，用XShell写，美滋滋😋，然后配置了以下双十一白嫖的阿里服务器，也用XShell连接。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/22/2022%E5%B9%B411%E6%9C%8822%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/22/2022%E5%B9%B411%E6%9C%8822%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月22日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-22 15:59:33 / Modified: 16:53:18" itemprop="dateCreated datePublished" datetime="2022-11-22T15:59:33+08:00">2022-11-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上午投简历，看黑马的测试入门课。静不下心来，几分钟就要看一次boss上有没有回复。</p>
+<p>还是想去嵌入式，下午写了一份嵌入式的简历，学了一点python基础</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/21/2022%E5%B9%B411%E6%9C%8821%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/21/2022%E5%B9%B411%E6%9C%8821%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月21日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-21 16:13:50 / Modified: 23:13:25" itemprop="dateCreated datePublished" datetime="2022-11-21T16:13:50+08:00">2022-11-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上午学完黑马软件测试day2。</p>
+<p>中午boss上投了一波测试和C的工作。发现测试的话学一点python和selenium是很大的加分，C的话，还需要学linux C，最好加上网络编程，还是得学webserver项目。</p>
+<p><strong>一点心得：boss必须得每天都投，不能想着学好再投，因为学好这个状态是达不到的。边学边投还能确定就业工作要啥样的技能，确定学习的方向。</strong></p>
+<p>晚上优化了一下简历。学习黑马软件测试day3。</p>
+<p>没学完……状态不太好，做核酸淋了雨，感觉要生病。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/20/2022%E5%B9%B411%E6%9C%8820%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/20/2022%E5%B9%B411%E6%9C%8820%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月20日</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-11-20 19:49:30 / Modified: 23:11:04" itemprop="dateCreated datePublished" datetime="2022-11-20T19:49:30+08:00">2022-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天是效率低下的一天，因为打算做完CJSON项目的，结果这个项目对我还是有点难度，做的比较痛苦。</p>
+<p>上午总觉得C的基础不太牢固，先是想找C的高级课程看看，然后又想着用C把数据结构再实现一遍。最后啥也没做好。</p>
+<p>==反思：时间紧，项目难的话就先硬啃了，实在不行就做完再过一遍。另外CJSON其实还是能找到不少资料搭配着看的。==</p>
+<p>晚上：学习软件测试理论。看了黑马的软件测试入门day1，还是有点收获的。</p>
+<p><strong>一点小心得：还是得多刷面经，目前来看面试就没有超出过常规八股。而且我项目比较简单，也没什么好问的，基本上全程八股文。</strong></p>
+<p>项目的话，必备的一个问题就是：<strong>你在做这个项目的时候遇到什么难点？你是怎么解决的？</strong>这个问题最好好好准备一下。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小垃圾也要加油</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

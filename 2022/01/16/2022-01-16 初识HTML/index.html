@@ -1,32 +1,361 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-sunflower.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32X32-sunflower.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16X16-sunflower.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ruo-wei.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="初识HTML这一篇是好久之前的笔记啦，当时看的是动力结点杜聚宾老师的课，重新回顾一下发到博客上来。 在学习HTML之前，先了解一下两种系统架构： 系统结构：B&#x2F;S架构和C&#x2F;S架构B&#x2F;S架构：&#x3D;&#x3D;Browser &#x2F; Server （浏览器&#x2F;服务器的交互形式）&#x3D;&#x3D;用户通过浏览器来访问。 Browser支持哪些语言：HTML CSS JavaScript Server即服务器端的语言很多：C C++ J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="https://ruo-wei.github.io/2022/01/16/2022-01-16%20%E5%88%9D%E8%AF%86HTML/index.html">
+<meta property="og:site_name" content="Patchouli&#39;s Digital Library🌟">
+<meta property="og:description" content="初识HTML这一篇是好久之前的笔记啦，当时看的是动力结点杜聚宾老师的课，重新回顾一下发到博客上来。 在学习HTML之前，先了解一下两种系统架构： 系统结构：B&#x2F;S架构和C&#x2F;S架构B&#x2F;S架构：&#x3D;&#x3D;Browser &#x2F; Server （浏览器&#x2F;服务器的交互形式）&#x3D;&#x3D;用户通过浏览器来访问。 Browser支持哪些语言：HTML CSS JavaScript Server即服务器端的语言很多：C C++ J">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ruo-wei.github.io/.io//CS%E6%9E%B6%E6%9E%84%E5%92%8CBS%E6%9E%B6%E6%9E%84.png">
+<meta property="article:published_time" content="2022-01-16T06:21:06.000Z">
+<meta property="article:modified_time" content="2022-01-17T06:52:40.803Z">
+<meta property="article:author" content="小垃圾也要加油">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ruo-wei.github.io/.io//CS%E6%9E%B6%E6%9E%84%E5%92%8CBS%E6%9E%B6%E6%9E%84.png">
+
+
+<link rel="canonical" href="https://ruo-wei.github.io/2022/01/16/2022-01-16%20%E5%88%9D%E8%AF%86HTML/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ruo-wei.github.io/2022/01/16/2022-01-16%20%E5%88%9D%E8%AF%86HTML/","path":"2022/01/16/2022-01-16 初识HTML/","title":"HTML"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>HTML | Patchouli's Digital Library🌟</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Patchouli's Digital Library🌟</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">天才并不比一个诚实的人有更多的光，但他有一个特殊的透镜，可以将光线聚焦至燃点————维特根斯坦</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+  <aside class="sidebar">
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E8%AF%86HTML"><span class="nav-number">1.</span> <span class="nav-text">初识HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%EF%BC%9AB-S%E6%9E%B6%E6%9E%84%E5%92%8CC-S%E6%9E%B6%E6%9E%84"><span class="nav-number">1.0.1.</span> <span class="nav-text">系统结构：B&#x2F;S架构和C&#x2F;S架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B-S%E6%9E%B6%E6%9E%84%EF%BC%9A"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">B&#x2F;S架构：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#B-S%E6%9E%B6%E6%9E%84%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">B&#x2F;S架构的系统有什么优点和缺点？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B-S%E6%9E%B6%E6%9E%84%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BB%A3%E8%A1%A8%EF%BC%9F"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">B&#x2F;S架构的系统有哪些代表？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-S%E6%9E%B6%E6%9E%84"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">C&#x2F;S架构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-S%E6%9E%B6%E6%9E%84%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="nav-number">1.0.1.2.1.</span> <span class="nav-text">C&#x2F;S架构的系统有什么优点和缺点？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84C-S%E6%9E%B6%E6%9E%84%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="nav-number">1.0.1.2.2.</span> <span class="nav-text">常见的C&#x2F;S架构的系统：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHTML%EF%BC%9F"><span class="nav-number">1.0.2.</span> <span class="nav-text">什么是HTML？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E6%98%AF%E4%B8%8D%E6%98%AF%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="nav-number">1.0.3.</span> <span class="nav-text">HTML是不是编程语言？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E8%BF%90%E8%A1%8C%E5%9C%A8%E5%93%AA%EF%BC%9F"><span class="nav-number">1.0.4.</span> <span class="nav-text">HTML运行在哪？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BB%80%E4%B9%88%E5%BC%80%E5%8F%91%EF%BC%9F"><span class="nav-number">1.0.5.</span> <span class="nav-text">用什么开发？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E5%9F%BA%E6%9C%AC%E7%BD%91%E9%A1%B5%E7%BB%93%E6%9E%84"><span class="nav-number">1.0.6.</span> <span class="nav-text">HTML基本网页结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90%EF%BC%9F"><span class="nav-number">1.0.6.0.1.</span> <span class="nav-text">HTML的基本组成？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E6%98%AF%E8%B0%81%E5%88%B6%E5%AE%9A%E7%9A%84%EF%BC%9F"><span class="nav-number">1.0.7.</span> <span class="nav-text">HTML是谁制定的？</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小垃圾也要加油"
+      src="/images/avatar1.jpg">
+  <p class="site-author-name" itemprop="name">小垃圾也要加油</p>
+  <div class="site-description" itemprop="description">学习中……</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/01/16/2022-01-16%20%E5%88%9D%E8%AF%86HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTML
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-16 14:21:06" itemprop="dateCreated datePublished" datetime="2022-01-16T14:21:06+08:00">2022-01-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-01-17 14:52:40" itemprop="dateModified" datetime="2022-01-17T14:52:40+08:00">2022-01-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="初识HTML"><a href="#初识HTML" class="headerlink" title="初识HTML"></a>初识HTML</h1><p>这一篇是好久之前的笔记啦，当时看的是<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11t411K74Q?p=4">动力结点杜聚宾老师的课</a>，重新回顾一下发到博客上来。</p>
+<p>在学习HTML之前，先了解一下两种系统架构：</p>
+<h3 id="系统结构：B-S架构和C-S架构"><a href="#系统结构：B-S架构和C-S架构" class="headerlink" title="系统结构：B/S架构和C/S架构"></a>系统结构：B/S架构和C/S架构</h3><h4 id="B-S架构："><a href="#B-S架构：" class="headerlink" title="B/S架构："></a>B/S架构：</h4><p><strong>==Browser / Server （浏览器/服务器的交互形式）==<strong>用户通过</strong>浏览器</strong>来访问。</p>
+<p>Browser支持哪些语言：<code>HTML</code> <code>CSS</code> <code>JavaScript</code></p>
+<p>Server即服务器端的语言很多：<code>C</code> <code>C++</code> <code>Java</code> <code>python</code>…..</p>
+<h5 id="B-S架构的系统有什么优点和缺点？"><a href="#B-S架构的系统有什么优点和缺点？" class="headerlink" title="B/S架构的系统有什么优点和缺点？"></a>B/S架构的系统有什么优点和缺点？</h5><ul>
+<li>优点：==升级方便，只升级服务器端代码即可，维护成本低。==</li>
+<li>缺点：==速度慢、体验不好、界面不炫酷。==</li>
+</ul>
+<blockquote>
+<p>企业内部的解决方案都是采用B/S架构的系统，因为企业内部办公需要的一些系统不需要炫酷，不需要特别好的用户体验，只要能做数据的增删改查即可。并且企业内部更注重维护的成本。</p>
+</blockquote>
+<h5 id="B-S架构的系统有哪些代表？"><a href="#B-S架构的系统有哪些代表？" class="headerlink" title="B/S架构的系统有哪些代表？"></a>B/S架构的系统有哪些代表？</h5><p>京东、百度、Google….</p>
+<h4 id="C-S架构"><a href="#C-S架构" class="headerlink" title="C/S架构"></a>C/S架构</h4><p>Client / Server   （客户端/服务器端的交互形式）用户通过<strong>客户端</strong>来访问。</p>
+<h5 id="C-S架构的系统有什么优点和缺点？"><a href="#C-S架构的系统有什么优点和缺点？" class="headerlink" title="C/S架构的系统有什么优点和缺点？"></a>C/S架构的系统有什么优点和缺点？</h5><ul>
+<li>缺点：==升级麻烦，维护成本较高。==</li>
+<li>优点：==速度快，体验好，界面炫酷。==（娱乐型的系统多数是C/S架构的）</li>
+</ul>
+<h5 id="常见的C-S架构的系统："><a href="#常见的C-S架构的系统：" class="headerlink" title="常见的C/S架构的系统："></a>常见的C/S架构的系统：</h5><p>QQ、微信、网易云….</p>
+<p>想起来我在<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ux411G7Bs">数据库课程</a>上老师也讲过C/S架构和B/S架构，这是我当时记下的：</p>
+<p><img src="/.io//CS%E6%9E%B6%E6%9E%84%E5%92%8CBS%E6%9E%B6%E6%9E%84.png" alt="CS架构和BS架构"></p>
+<p>HTML就是在B/S架构中的Browser端发挥作用的。</p>
+<h3 id="什么是HTML？"><a href="#什么是HTML？" class="headerlink" title="什么是HTML？"></a>什么是HTML？</h3><p>html：hyper text markup language，超文本标记语言</p>
+<blockquote>
+<p>==超文本？==</p>
+<p>​            超级文本，例如流媒体，声音，视频，图片等。</p>
+<p>==标记语言？==</p>
+<p>​            这种语言是由<font color="#FF000">大量的标签</font>组成。</p>
+<p>tip：任何一个标签都有<strong>开始标签</strong>和<strong>结束标签</strong>，例如：</p>
+<p><code>&lt;标签&gt; </code> ：开始标签</p>
+<p><code>&lt;/标签&gt;</code> ：结束标签【括号内起始位置增加一个反斜杠】</p>
+</blockquote>
+<h3 id="HTML是不是编程语言？"><a href="#HTML是不是编程语言？" class="headerlink" title="HTML是不是编程语言？"></a>HTML是不是编程语言？</h3><p>html严格意义上来只能说是一种规范，一种浏览器上的规范，标签语言，不能称为编程语言，因为html中没有变量、数据类型、控制语句if、for，这些都没有的。</p>
+<blockquote>
+<p>tip : HTML是标签语言，CSS是样式语言，都不是编程语言。只有JavaScript是编程语言。</p>
+</blockquote>
+<h3 id="HTML运行在哪？"><a href="#HTML运行在哪？" class="headerlink" title="HTML运行在哪？"></a>HTML运行在哪？</h3><p>运行在<strong>浏览器</strong>上，直接使用浏览器打开HTML文件就能运行。</p>
+<h3 id="用什么开发？"><a href="#用什么开发？" class="headerlink" title="用什么开发？"></a>用什么开发？</h3><p>HTML开发的时候使用普通的文本编辑器就行，创建的文件扩展名是.html或者.htm</p>
+<p>HTML也有专业的开发工具，例如：DreamWeaver、HBuilder…..</p>
+<h3 id="HTML基本网页结构"><a href="#HTML基本网页结构" class="headerlink" title="HTML基本网页结构"></a>HTML基本网页结构</h3><p>文件格式：<code>xxx.html</code>（推荐）<code>xxx.htm</code></p>
+<h5 id="HTML的基本组成？"><a href="#HTML的基本组成？" class="headerlink" title="HTML的基本组成？"></a>HTML的基本组成？</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>一定有head和body两部分组成</p>
+<p>!doctype声明：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注释代码--&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--声明式：不能显示（head中只有title里的内容可以在网页标题中显示）--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--设置网页编码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>/&gt;</span>SEO </span><br><span class="line">    	<span class="comment">&lt;!--关键词：是否能被搜索引擎搜到--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;学习html&quot;</span>/&gt;</span></span><br><span class="line">    	<span class="comment">&lt;!--描述：当搜到网页时，展示的简介内容--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;学习html非常好&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>my first html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--能够显示的--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    my context</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>html不区分大小写，容错性很强</strong></p>
+<h3 id="HTML是谁制定的？"><a href="#HTML是谁制定的？" class="headerlink" title="HTML是谁制定的？"></a>HTML是谁制定的？</h3><p><strong>W3C：世界万维网联盟（World Wide Web Consortium）</strong></p>
+<p>W3C制定了HTML的规范，每个浏览器生产厂家都会遵守规范。HTML程序员也会按照这个规范去写代码。</p>
+<p>W3C标准：</p>
+<ul>
+<li>具体的实现产品html css javascript</li>
+<li>html版本</li>
+<li>html和xhtml的区别</li>
+<li>html内容的语义化</li>
+</ul>
+<p>HTML规范目前最高的版本是：HTML5.0，简称H5.</p>
+<p>W3C制定了很多规范：HTML/XML/http协议/https协议……</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/11/2022-01-11%20hexo%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="prev" title="hexo基本使用指南">
+                  <i class="fa fa-chevron-left"></i> hexo基本使用指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/16/2022-01-16%20yml%E8%AF%AD%E6%B3%95/" rel="next" title="yml语法">
+                  yml语法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小垃圾也要加油</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
