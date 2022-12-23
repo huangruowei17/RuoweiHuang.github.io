@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ruo-wei.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ruo-wei.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/./node_modules/hexo-generator-search/templates/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="学习中……">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Patchouli&#39;s Digital Library🌟">
@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -161,7 +161,7 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -190,6 +190,95 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/12/23/%E7%BB%99hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E6%9F%A5%E8%AF%A2%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar1.jpg">
+      <meta itemprop="name" content="小垃圾也要加油">
+      <meta itemprop="description" content="学习中……">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Patchouli's Digital Library🌟">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/12/23/%E7%BB%99hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E6%9F%A5%E8%AF%A2%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">给hexo文章添加查询功能</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-12-23 19:58:15 / Modified: 20:30:11" itemprop="dateCreated datePublished" datetime="2022-12-23T19:58:15+08:00">2022-12-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="hexo-博客添加查询功能"><a href="#hexo-博客添加查询功能" class="headerlink" title="hexo 博客添加查询功能"></a>hexo 博客添加查询功能</h1><p>使用插件 <code>hexo-generator-search</code> ，这个插件可以从你的Hexo blog中生成一个xml/json文件用于搜索。</p>
+<h4 id="1-插件下载，在博客根目录下执行下列命令："><a href="#1-插件下载，在博客根目录下执行下列命令：" class="headerlink" title="1. 插件下载，在博客根目录下执行下列命令："></a>1. 插件下载，在博客根目录下执行下列命令：</h4><p>注意：<code>windows</code> 电脑命令行推荐使用 <code>Powershell</code>，必须用管理员身份打开，然后 <code>cd</code> 到 <code>hexo</code> 根目录，执行下面命令。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-<span class="keyword">search</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>插件会下载在<code>/node_modules</code> 文件夹中，找到插件文件夹，可以看到 <code>README</code> 文档，推荐直接看 <code>README</code> 文档。</p>
+<h4 id="2-修改全局配置文件"><a href="#2-修改全局配置文件" class="headerlink" title="2. 修改全局配置文件"></a>2. 修改全局配置文件</h4><p>打开 <code>hexo</code> 全局配置文件 <code>_config.yml</code> ，加入下面的代码</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">template:</span> <span class="string">./search.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>path - 索引文件的路径，相对于站点根目录，默认是</p>
+</li>
+<li><p>field - 搜索的范围，哪些文件你想搜索？</p>
+<ul>
+<li>post - 只会包括博客中的所有post</li>
+<li>page - 只会包括博客中的所有pages</li>
+<li>all - 包括post和page</li>
+</ul>
+</li>
+<li><p>content - 是否包括文章的所有内容。默认设置为 <code>true</code> ，如果设置为 <code>false</code> 的话，搜索结果就只包括标题和 <code>meta info</code> 。</p>
+</li>
+<li><p>template - 自定义XML模板</p>
+</li>
+<li><p>limit - 限制搜索的条目数</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -358,9 +447,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-12-17 12:26:39 / Modified: 13:05:22" itemprop="dateCreated datePublished" datetime="2022-12-17T12:26:39+08:00">2022-12-17</time>
+      <time title="Created: 2022-12-17 12:26:39" itemprop="dateCreated datePublished" datetime="2022-12-17T12:26:39+08:00">2022-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-22 23:54:53" itemprop="dateModified" datetime="2022-12-22T23:54:53+08:00">2022-12-22</time>
     </span>
 
   
@@ -862,75 +957,6 @@
 <p>发现相比技术面，HR面更麻烦，今天HR面得一塌糊涂，应该准备一下常见HR面问题的话术。</p>
 <p>得到了一个嵌入式岗位的面试机会，冲冲冲！</p>
 <p>晚上看了一点蒋炎岩的操作系统，老师很年轻但是很牛（是卷王），讲得特别好！</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ruo-wei.github.io/2022/11/30/2022%E5%B9%B411%E6%9C%8830%E6%97%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar1.jpg">
-      <meta itemprop="name" content="小垃圾也要加油">
-      <meta itemprop="description" content="学习中……">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Patchouli's Digital Library🌟">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/30/2022%E5%B9%B411%E6%9C%8830%E6%97%A5/" class="post-title-link" itemprop="url">2022年11月30日</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-11-30 19:21:43 / Modified: 19:35:54" itemprop="dateCreated datePublished" datetime="2022-11-30T19:21:43+08:00">2022-11-30</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上午做了一套C的面试题，觉得C还是有些掌握的不好，尤其是项目，还是得打磨一下。</p>
-<p><strong>嵌入式还是得学，现在看岗位10个有7个都是嵌入式。</strong></p>
-<p>中午学了一点K大幼幼班，开心😊，然后自己上手就被难倒了＞︿＜，感觉一幅简单的画都要细细画几个小时。</p>
-<p>感觉冬天到了，今天下雪大降温，最近都见不到太阳了，心情不太好。想去找深广的工作，我看了一下，深圳现在的天气还是17℃，想去没有冬天的地方，最好还靠海（内陆人对海的向往），深圳完美符合，广州好吃的特别多，也很向往。</p>
-<p>努力把吃完饭后的娱乐改为学习Python。</p>
 
       
     </div>
